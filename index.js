@@ -1,4 +1,4 @@
-import { writeFile } from 'fs/promises';
+import fs from "fs"
 
 const array = [2,10,10,"a",4,"b",6,"d",true,"e",9,1,"z",12,"r","r", "c", false, true];
 const datosValidos = ['boolean', 'string', 'number'];
@@ -18,7 +18,7 @@ async function tp1(array, condicion){
         if (arrayNuevo){
             const contenido = arrayNuevo.join(', ');
 
-            await writeFile("dox.txt", contenido);
+            await fs.promises.writeFile("dox.txt", contenido);//ej5
             console.log("Archivo escrito con éxito.");}
         else{
             throw new Error("El nuevo array no tiene datos")
