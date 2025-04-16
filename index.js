@@ -1,5 +1,5 @@
 import fs from "fs"
-
+// https://drive.google.com/drive/folders/1udY3S54kOxy3pNfxgaQJr40NA9BGZBrb
 const array = [2,10,10,"a",4,"b",6,"d",true,"e",9,1,"z",12,"r","r", "c", false, true];
 const datosValidos = ['boolean', 'string', 'number'];
 
@@ -15,7 +15,7 @@ async function tp1(array, condicion){
         arrayNuevo = arrayNuevo.filter((value, index) => arrayNuevo.indexOf(value) === index); //ej3
         arrayNuevo.sort((a, b) => a - b);
         
-        if (arrayNuevo){
+        if (arrayNuevo.length > 0){
             const contenido = arrayNuevo.join(', ');
 
             await fs.promises.writeFile("dox.txt", contenido);//ej5
